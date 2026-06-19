@@ -325,7 +325,7 @@
     </nav>
 
     <!-- Header Presentation Hero -->
-    <header class="hero">
+    <header class="hero">  
         <h1>Secure Marketplace for <span>Premium Digital Assets</span></h1>
         <p>Instant, guaranteed marketplace distribution logs for fully configured communication profiles, virtual setups, and global data roaming logs.</p>
     </header>
@@ -734,3 +734,20 @@
     </script>
 </body>
 </html>
+    <!-- Add to Home Screen Instructions Prompt -->
+    <div id="homescreen-prompt" style="display: none; position: fixed; bottom: 90px; left: 5%; right: 5%; background: var(--bg-card); border: 1px solid var(--accent-blue); padding: 15px; border-radius: 12px; z-index: 9999; box-shadow: 0 4px 25px rgba(0,0,0,0.5); font-size: 0.85rem;">
+        <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 8px;">
+            <strong style="color: #fff;"><i class="fas fa-mobile-screen-button" style="color: var(--accent-blue);"></i> Save Affordlogs as an App!</strong>
+            <button onclick="document.getElementById('homescreen-prompt').style.display='none'" style="background: none; border: none; color: var(--text-muted); font-size: 1.1rem; cursor: pointer;">&times;</button>
+        </div>
+        <p style="color: var(--text-muted); margin: 0 0 8px 0;">Tap the browser menu/share icon and select <strong>"Add to Home Screen"</strong> to access our live inventory instantly from your phone!</p>
+    </div>
+
+    <script>
+        // Automatically show the helpful reminder after 5 seconds
+        window.addEventListener('DOMContentLoaded', () => {
+            setTimeout(() => {
+                document.getElementById('homescreen-prompt').style.display = 'block';
+            }, 5000);
+        });
+    </script>
