@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>AFFORDLOGS | All Your Digital Needs In One Place</title>
+    <title>AFFORDLOGS & BOSSED EXPRESS | Digital Services & Logistics</title>
     <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -20,8 +20,9 @@
             --accent-blue: #38bdf8;
             --text-main: #ffffff;
             --text-muted: #94a3b8;
-            --whatsapp: #25D366;
             --telegram: #0088cc;
+            --success: #10b981;
+            --danger: #ef4444;
         }
 
         * {
@@ -54,58 +55,69 @@
             border-bottom: 1px solid rgba(255, 255, 255, 0.05);
         }
 
-        .logo {
-            font-size: 1.5rem;
+        .brand-container {
+            display: flex;
+            flex-direction: column;
+        }
+
+        .logo-main {
+            font-size: 1.4rem;
             font-weight: 700;
             letter-spacing: 1px;
             color: #fff;
-        }
-
-        .logo span {
-            color: var(--accent-blue);
-        }
-
-        .nav-links {
             display: flex;
-            list-style: none;
-            gap: 20px;
+            align-items: center;
+            gap: 8px;
         }
 
-        .nav-links a {
-            color: var(--text-muted);
-            text-decoration: none;
-            font-size: 0.95rem;
-            transition: color 0.3s;
-        }
-
-        .nav-links a:hover {
+        .logo-main i {
             color: var(--accent-blue);
+        }
+
+        .logo-main span {
+            color: var(--accent-blue);
+        }
+
+        .slogan-sub {
+            font-size: 0.75rem;
+            color: var(--text-muted);
+            font-style: italic;
+            margin-top: 2px;
         }
 
         /* Hero Section */
         .hero {
-            min-height: 100vh;
+            min-height: 70vh;
             display: flex;
             flex-direction: column;
             justify-content: center;
             align-items: center;
             text-align: center;
-            padding: 120px 5% 60px 5%;
+            padding: 140px 5% 40px 5%;
             background: radial-gradient(circle at top, rgba(30, 64, 175, 0.15) 0%, rgba(11, 15, 25, 1) 70%);
         }
 
         .hero h1 {
-            font-size: 3rem;
+            font-size: 2.6rem;
             font-weight: 700;
-            margin-bottom: 20px;
+            margin-bottom: 15px;
             max-width: 800px;
             line-height: 1.2;
         }
 
+        .hero .subtitle {
+            font-size: 1.1rem;
+            color: var(--accent-blue);
+            font-weight: 600;
+            margin-bottom: 10px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
         .hero p {
-            font-size: 1.2rem;
+            font-size: 1rem;
             color: var(--text-muted);
-            margin-bottom: 40px;
+            margin-bottom: 35px;
             max-width: 600px;
         }
 
@@ -120,37 +132,32 @@
             display: inline-flex;
             align-items: center;
             gap: 10px;
-            padding: 14px 28px;
+            padding: 12px 28px;
             border-radius: 8px;
             font-weight: 600;
             text-decoration: none;
             transition: all 0.3s ease;
-            font-size: 1rem;
+            font-size: 0.95rem;
+            cursor: pointer;
         }
 
-        .btn-whatsapp {
-            background-color: var(--whatsapp);
+        .btn-telegram { background-color: var(--telegram); color: #fff; }
+        .btn-telegram:hover { background-color: #0077b3; transform: translateY(-2px); }
+
+        .btn-buy {
+            background-color: var(--primary);
             color: #fff;
+            width: 100%;
+            justify-content: center;
+            font-size: 0.9rem;
+            padding: 10px;
+            margin-top: 15px;
         }
-
-        .btn-whatsapp:hover {
-            background-color: #20ba5a;
-            transform: translateY(-2px);
-        }
-
-        .btn-telegram {
-            background-color: var(--telegram);
-            color: #fff;
-        }
-
-        .btn-telegram:hover {
-            background-color: #0077b3;
-            transform: translateY(-2px);
-        }
+        .btn-buy:hover { background-color: var(--primary-hover); }
 
         /* Section Global Styling */
         section {
-            padding: 80px 5%;
+            padding: 60px 5%;
             max-width: 1200px;
             margin: 0 auto;
         }
@@ -158,139 +165,142 @@
         .section-title {
             text-align: center;
             font-size: 2rem;
-            margin-bottom: 50px;
-            position: relative;
+            margin-bottom: 40px;
         }
 
-        .section-title::after {
-            content: '';
-            display: block;
-            width: 50px;
-            height: 3px;
-            background: var(--accent-blue);
-            margin: 10px auto 0 auto;
-            border-radius: 2px;
-        }
-
-        /* Services Grid */
-        .services-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-            gap: 25px;
-        }
-
-        .service-card {
-            background-color: var(--bg-card);
-            padding: 30px;
-            border-radius: 12px;
-            border: 1px solid rgba(255, 255, 255, 0.03);
-            transition: all 0.3s ease;
-        }
-
-        .service-card:hover {
-            transform: translateY(-5px);
-            border-color: rgba(56, 189, 248, 0.2);
-            box-shadow: 0 10px 20px rgba(0,0,0,0.3);
-        }
-
-        .service-icon {
-            font-size: 2rem;
+        .section-title span {
             color: var(--accent-blue);
-            margin-bottom: 20px;
         }
 
-        .service-card h3 {
-            font-size: 1.25rem;
-            margin-bottom: 10px;
+        /* Product Catalog Grid */
+        .catalog-container {
+            margin-bottom: 40px;
         }
 
-        .service-card p {
+        .category-title {
+            font-size: 1.3rem;
+            margin: 30px 0 15px 0;
+            color: var(--accent-blue);
+            border-left: 4px solid var(--primary);
+            padding-left: 10px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .products-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+            gap: 20px;
+        }
+
+        .product-card {
+            background-color: var(--bg-card);
+            border: 1px solid rgba(255, 255, 255, 0.04);
+            border-radius: 12px;
+            padding: 20px;
+            position: relative;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            transition: transform 0.3s, border-color 0.3s;
+        }
+
+        .product-card:hover {
+            transform: translateY(-4px);
+            border-color: rgba(56, 189, 248, 0.2);
+        }
+
+        .product-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            margin-bottom: 15px;
+        }
+
+        .product-icon {
+            font-size: 1.4rem;
+            color: var(--accent-blue);
+            background: rgba(56, 189, 248, 0.1);
+            padding: 10px;
+            border-radius: 8px;
+        }
+
+        .badge {
+            font-size: 0.75rem;
+            padding: 4px 8px;
+            border-radius: 20px;
+            font-weight: 600;
+        }
+
+        .badge-instock { background-color: rgba(16, 185, 129, 0.15); color: var(--success); }
+        .badge-active { background-color: rgba(56, 189, 248, 0.15); color: var(--accent-blue); }
+
+        .product-details h3 {
+            font-size: 1.1rem;
+            margin-bottom: 6px;
+        }
+
+        .product-details p {
             color: var(--text-muted);
-            font-size: 0.95rem;
+            font-size: 0.85rem;
+            margin-bottom: 15px;
+            min-height: 40px;
         }
 
-        /* Why Choose Us */
+        .product-footer {
+            border-top: 1px solid rgba(255,255,255,0.05);
+            padding-top: 15px;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .price-label {
+            font-size: 0.75rem;
+            color: var(--text-muted);
+            text-transform: uppercase;
+        }
+
+        .price-value {
+            font-size: 1.35rem;
+            font-weight: 700;
+            color: #fff;
+        }
+
+        /* Features */
         .features-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-            gap: 25px;
+            grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+            gap: 20px;
             text-align: center;
         }
 
         .feature-item {
-            background: linear-gradient(145deg, #161b26, #0f131c);
-            padding: 30px 20px;
+            background: var(--bg-card);
+            padding: 25px 15px;
             border-radius: 12px;
+            border: 1px solid rgba(255, 255, 255, 0.02);
         }
 
         .feature-item i {
-            font-size: 2.5rem;
+            font-size: 1.8rem;
             color: var(--accent-blue);
-            margin-bottom: 15px;
+            margin-bottom: 12px;
         }
 
-        .feature-item h4 {
-            font-size: 1.1rem;
-            font-weight: 600;
-        }
+        .feature-item h4 { font-size: 0.95rem; }
 
-        /* Contact Section */
-        .contact-container {
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            gap: 20px;
-            background: var(--bg-card);
-            padding: 40px;
+        /* Disclaimer */
+        .disclaimer-box {
+            background-color: rgba(255, 255, 255, 0.01);
+            border: 1px solid rgba(255, 255, 255, 0.05);
             border-radius: 12px;
-            max-width: 600px;
-            margin: 0 auto;
+            padding: 20px;
+            margin: 30px auto;
+            max-width: 800px;
             text-align: center;
-        }
-
-        .contact-method {
-            display: flex;
-            align-items: center;
-            gap: 15px;
-            font-size: 1.2rem;
-            color: var(--text-main);
-            text-decoration: none;
-            width: 100%;
-            justify-content: center;
-            padding: 12px;
-            border-radius: 8px;
-            background: rgba(255,255,255,0.02);
-            transition: background 0.3s;
-        }
-
-        .contact-method:hover {
-            background: rgba(255,255,255,0.05);
-        }
-
-        .contact-method i {
-            font-size: 1.5rem;
-        }
-
-        /* Terms & Disclaimer */
-        .disclaimer-section {
-            background-color: rgba(239, 68, 68, 0.05);
-            border: 1px solid rgba(239, 68, 68, 0.1);
-            border-radius: 12px;
-            padding: 30px;
-            margin: 40px auto;
-            max-width: 800px; iiii
-            text-align: center;
-        }
-
-        .disclaimer-section h3 {
-            color: #ef4444;
-            margin-bottom: 10px;
-            font-size: 1.2rem;
-        }
-
-        .disclaimer-section p {
+            font-size: 0.85rem;
             color: var(--text-muted);
-            font-size: 0.9rem;
         }
 
         /* Footer */
@@ -301,24 +311,19 @@
             border-top: 1px solid rgba(255, 255, 255, 0.05);
         }
 
-        footer h2 {
-            font-size: 1.5rem;
-            margin-bottom: 10px;
+        footer .footer-logo {
+            font-size: 1.2rem;
+            font-weight: 700;
+            color: #fff;
         }
 
-        footer p {
-            color: var(--text-muted);
-            font-size: 0.9rem;
-        }
+        footer p { color: var(--text-muted); font-size: 0.85rem; margin-top: 5px; }
 
-        /* Floating Buttons */
+        /* Floating Contact Button */
         .floating-buttons {
             position: fixed;
             bottom: 20px;
             right: 20px;
-            display: flex;
-            flex-direction: column;
-            gap: 12px;
             z-index: 9999;
         }
 
@@ -330,186 +335,185 @@
             justify-content: center;
             align-items: center;
             color: #fff;
-            font-size: 1.6rem;
+            font-size: 1.5rem;
             text-decoration: none;
-            box-shadow: 0 4px 12px rgba(0,0,0,0.4);
-            transition: transform 0.3s ease;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.5);
+            transition: transform 0.3s;
+            background-color: var(--telegram);
         }
 
-        .floating-btn:hover {
-            transform: scale(1.1);
-        }
-
-        .float-wa { background-color: var(--whatsapp); }
-        .float-tg { background-color: var(--telegram); }
-
-        /* Responsive Design */
-        @media (max-width: 768px) {
-            .hero h1 {
-                font-size: 2.2rem;
-            }
-            .hero p {
-                font-size: 1rem;
-            }
-            .nav-links {
-                display: none; /* Keeps it minimal for strict traffic landing */
-            }
-            section {
-                padding: 60px 5%;
-            }
-        }
+        .floating-btn:hover { transform: scale(1.1); }
     </style>
 </head>
 <body>
 
-    <!-- Header / Navbar -->
+    <!-- Nav Menu with Integrated Branding & Logos -->
     <nav>
-        <div class="logo">AFFORD<span>LOGS</span></div>
-        <ul class="nav-links">
-            <li><a href="#services">Services</a></li>
-            <li><a href="#why-choose-us">Why Us</a></li>
-            <li><a href="#contact">Contact</a></li>
-        </ul>
+        <div class="brand-container">
+            <div class="logo-main">
+                <i class="fas fa-truck-fast"></i> BOSSED EXPRESS | AFFORD<span>LOGS</span>
+            </div>
+            <div class="slogan-sub">Bringing goods, safely fast</div>
+        </div>
     </nav>
 
-    <!-- Hero Section -->
+    <!-- Main Entry Point / Hero Header -->
     <header class="hero">
-        <h1>All Your Digital Needs In One Place</h1>
-        <p>Fast, trusted, and affordable digital services with worldwide support.</p>
+        <div class="subtitle">Affordlogs Digital Services</div>
+        <h1>Your Premium Asset Gateway & Logistics Hub</h1>
+        <p>Providing seamless digital access transactions alongside secure, lightning-fast logistics operations.</p>
         <div class="cta-buttons">
-            <a href="https://wa.me/2349039919965" class="btn btn-whatsapp" target="_blank">
-                <i class="fab fa-whatsapp"></i> Chat on WhatsApp
-            </a>
             <a href="https://t.me/afford_logs" class="btn btn-telegram" target="_blank">
-                <i class="fab fa-telegram-plane"></i> Contact on Telegram
+                <i class="fab fa-telegram-plane"></i> Enter Main Telegram Channel
             </a>
         </div>
     </header>
 
-    <!-- Services Section -->
-    <section id="services">
-        <h2 class="section-title">Our Services</h2>
-        <div class="services-grid">
-            <div class="service-card">
-                <i class="fas fa-sim-card service-icon"></i>
-                <h3>eSIM Solutions</h3>
-                <p>Stay connected seamlessly across borders with instant virtual cellular connectivity plans.</p>
+    <!-- Live Interactive Catalog -->
+    <section id="catalog">
+        <h2 class="section-title">Live <span>Offerings & Rates</span></h2>
+        
+        <!-- Category: Digital Assets -->
+        <div class="catalog-container">
+            <h3 class="category-title"><i class="fas fa-sliders"></i> Utilities & Digital Assets</h3>
+            <div class="products-grid">
+                
+                <!-- Product 1 -->
+                <div class="product-card">
+                    <div class="product-header">
+                        <i class="fas fa-sim-card product-icon"></i>
+                        <span class="badge badge-instock">Available</span>
+                    </div>
+                    <div class="product-details">
+                        <h3>Premium eSIM Solution</h3>
+                        <p>High-speed global data roaming. Instant QR activation sequence setup.</p>
+                    </div>
+                    <div class="product-footer">
+                        <span class="price-label">Price Starts From</span>
+                        <span class="price-value">₦5,000</span>
+                        <a href="https://t.me/afford_logs?text=Hello,%20I%20want%20to%20buy%20the%20Premium%20eSIM%20Solution" class="btn btn-buy" target="_blank">
+                            <i class="fas fa-shopping-cart"></i> Buy via Telegram
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Product 2 -->
+                <div class="product-card">
+                    <div class="product-header">
+                        <i class="fas fa-shield-alt product-icon"></i>
+                        <span class="badge badge-instock">Available</span>
+                    </div>
+                    <div class="product-details">
+                        <h3>Premium VPN Accounts</h3>
+                        <p>Ultra-secure, no-logs private data access configuration logs.</p>
+                    </div>
+                    <div class="product-footer">
+                        <span class="price-label">Price / Month</span>
+                        <span class="price-value">₦3,500</span>
+                        <a href="https://t.me/afford_logs?text=Hello,%20I%20want%20to%20buy%20the%20Premium%20VPN%20Account" class="btn btn-buy" target="_blank">
+                            <i class="fas fa-shopping-cart"></i> Buy via Telegram
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Product 3 -->
+                <div class="product-card">
+                    <div class="product-header">
+                        <i class="fas fa-phone-alt product-icon"></i>
+                        <span class="badge badge-instock">Available</span>
+                    </div>
+                    <div class="product-details">
+                        <h3>Virtual Number Activations</h3>
+                        <p>Secure bypass verification logs for major international application protocols.</p>
+                    </div>
+                    <div class="product-footer">
+                        <span class="price-label">Price Per OTP</span>
+                        <span class="price-value">₦1,500</span>
+                        <a href="https://t.me/afford_logs?text=Hello,%20I%20need%20a%20Virtual%20Number%20Activation" class="btn btn-buy" target="_blank">
+                            <i class="fas fa-shopping-cart"></i> Buy via Telegram
+                        </a>
+                    </div>
+                </div>
+
             </div>
-            <div class="service-card">
-                <i class="fas fa-shield-alt service-icon"></i>
-                <h3>VPN Services</h3>
-                <p>Secure your internet browsing experience with ultra-fast encryption protocols.</p>
-            </div>
-            <div class="service-card">
-                <i class="fas fa-network-wired service-icon"></i>
-                <h3>Proxy Services</h3>
-                <p>High-quality residential and datacenter proxies tailored for modern web operations.</p>
-            </div>
-            <div class="service-card">
-                <i class="fas fa-comments service-icon"></i>
-                <h3>Digital Communication</h3>
-                <p>Advanced cross-platform solutions for individual and enterprise infrastructure.</p>
-            </div>
-            <div class="service-card">
-                <i class="fas fa-share-alt service-icon"></i>
-                <h3>Social Media Services</h3>
-                <p>Optimize and scale your social platforms with specialized business tools.</p>
-            </div>
-            <div class="service-card">
-                <i class="fas fa-gift service-icon"></i>
-                <h3>Gift Card Services</h3>
-                <p>Instant access to globally recognized digital gift vouchers and store credits.</p>
-            </div>
-            <div class="service-card">
-                <i class="fas fa-credit-card service-icon"></i>
-                <h3>Digital Payments</h3>
-                <p>Flexible transaction alternatives and tools optimized for seamless web checkouts.</p>
-            </div>
-            <div class="service-card">
-                <i class="fas fa-tools service-icon"></i>
-                <h3>Online Business Tools</h3>
-                <p>Premium utilities designed to enhance operations and productivity metrics.</p>
-            </div>
-            <div class="service-card">
-                <i class="fas fa-phone-alt service-icon"></i>
-                <h3>Virtual Numbers</h3>
-                <p>Secure, reliable bypass and activation numbers available for international platforms.</p>
-            </div>
-            <div class="service-card">
-                <i class="fas fa-headset service-icon"></i>
-                <h3>Customer Support</h3>
-                <p>Dedicated assistance pipeline to answer setups, queries, and purchase resolutions.</p>
+        </div>
+
+        <!-- Category: Gift Cards & Payments -->
+        <div class="catalog-container">
+            <h3 class="category-title"><i class="fas fa-wallet"></i> Gift Cards & Payment Pickups</h3>
+            <div class="products-grid">
+                
+                <!-- Product 4 -->
+                <div class="product-card">
+                    <div class="product-header">
+                        <i class="fas fa-gift product-icon"></i>
+                        <span class="badge badge-active">Top Rates</span>
+                    </div>
+                    <div class="product-details">
+                        <h3>Gift Card Redemptions</h3>
+                        <p>Instant processing for Apple, Steam, Amazon, and Razer Gold cards at premium exchange markers.</p>
+                    </div>
+                    <div class="product-footer">
+                        <span class="price-label">Exchange Rate</span>
+                        <span class="price-value">Best Daily Rate</span>
+                        <a href="https://t.me/afford_logs?text=Hello,%20I%20have%20a%20gift%20card%20to%20redeem" class="btn btn-buy" target="_blank">
+                            <i class="fas fa-money-bill-transfer"></i> Sell via Telegram
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Product 5 -->
+                <div class="product-card">
+                    <div class="product-header">
+                        <i class="fas fa-credit-card product-icon"></i>
+                        <span class="badge badge-active">Instant Pickup</span>
+                    </div>
+                    <div class="product-details">
+                        <h3>Digital Payment Pickups</h3>
+                        <p>Fast validation tracking for secure CashApp, Zelle, and Bitcoin transactional flows.</p>
+                    </div>
+                    <div class="product-footer">
+                        <span class="price-label">Payout Delivery</span>
+                        <span class="price-value">Instant Credit</span>
+                        <a href="https://t.me/afford_logs?text=Hello,%20I%20want%20to%20process%20a%20CashApp/Zelle/BTC%20payment" class="btn btn-buy" target="_blank">
+                            <i class="fas fa-hand-holding-dollar"></i> Deal via Telegram
+                        </a>
+                    </div>
+                </div>
+
             </div>
         </div>
     </section>
 
-    <!-- Why Choose Us Section -->
-    <section id="why-choose-us">
-        <h2 class="section-title">Why Choose Us</h2>
-        <div class="features-grid">
-            <div class="feature-item">
-                <i class="fas fa-bolt"></i>
-                <h4>Fast Delivery</h4>
-            </div>
-            <div class="feature-item">
-                <i class="fas fa-check-circle"></i>
-                <h4>Trusted Service</h4>
-            </div>
-            <div class="feature-item">
-                <i class="fas fa-tags"></i>
-                <h4>Affordable Pricing</h4>
-            </div>
-            <div class="feature-item">
-                <i class="fas fa-lock"></i>
-                <h4>Secure Transactions</h4>
-            </div>
-            <div class="feature-item">
-                <i class="fas fa-globe"></i>
-                <h4>Worldwide Support</h4>
-            </div>
-        </div>
-    </section>
-
-    <!-- Contact Section -->
-    <section id="contact">
-        <h2 class="section-title">Get In Touch</h2>
-        <div class="contact-container">
-            <a href="https://t.me/afford_logs" class="contact-method" target="_blank">
-                <i class="fab fa-telegram" style="color: var(--telegram);"></i>
-                <span>Telegram: @afford_logs</span>
-            </a>
-            <a href="https://wa.me/2349039919965" class="contact-method" target="_blank">
-                <i class="fab fa-whatsapp" style="color: var(--whatsapp);"></i>
-                <span>WhatsApp: +2349039919965</span>
-            </a>
-        </div>
-    </section>
-
-    <!-- Terms & Disclaimer Section --> 
+    <!-- Core Commitments -->
     <section>
-        <div class="disclaimer-section">
-            <h3>Terms & Disclaimer</h3>
-            <p>All services are intended for lawful use only. Customers are responsible for how purchased services are used. Once a service is delivered and confirmed working, responsibility transfers to the buyer.</p>
+        <h2 class="section-title">Core <span>Commitments</span></h2>
+        <div class="features-grid">
+            <div class="feature-item"><i class="fas fa-bolt"></i><h4>Safely Fast</h4></div>
+            <div class="feature-item"><i class="fas fa-shield-halved"></i><h4>Trusted Service</h4></div>
+            <div class="feature-item"><i class="fas fa-tags"></i><h4>Elite Pricing</h4></div>
+            <div class="feature-item"><i class="fas fa-lock"></i><h4>Secure Operations</h4></div>
         </div>
     </section>
+
+    <!-- Disclaimer Box -->
+    <div class="disclaimer-box">
+        <strong style="color: var(--danger); display: block; margin-bottom: 5px;">Terms & Disclaimer</strong>
+        All services are intended for lawful use only. Customers are entirely responsible for usage logistics post-delivery.
+    </div>
 
     <!-- Footer -->
     <footer>
-        <h2>AFFORDLOGS</h2>
-        <p>Digital Access Made Easy.</p>
+        <div class="footer-logo">BOSSED EXPRESS & AFFORDLOGS</div>
+        <p>Bringing goods, safely fast. Digital Access Made Easy.</p>
     </footer>
 
-    <!-- Floating Mobile-Friendly Sticky Chat Buttons -->
+    <!-- Persistent Floating Telegram Contact Widget -->
     <div class="floating-buttons">
-        <a href="https://wa.me/2349039919965" class="floating-btn float-wa" target="_blank" aria-label="Chat on WhatsApp">
-            <i class="fab fa-whatsapp"></i>
-        </a>
-        <a href="https://t.me/afford_logs" class="floating-btn float-tg" target="_blank" aria-label="Contact on Telegram">
+        <a href="https://t.me/afford_logs" class="floating-btn" target="_blank" aria-label="Contact on Telegram">
             <i class="fab fa-telegram-plane"></i>
-        
         </a>
     </div>
 
 </body>
 </html>
-space
