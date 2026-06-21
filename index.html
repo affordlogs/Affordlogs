@@ -3,262 +3,514 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Affordlogs | Premium Digital Utility Assets Hub</title>
+    <title>Affordlogs | Digital Access Made Easy</title>
+    <!-- Font Awesome for sleek, modern service icons -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <style>
-        * { box-sizing: border-box; margin: 0; padding: 0; font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif; }
-        body { background-color: #060b13; color: #ffffff; padding-bottom: 140px; }
-        .top-notification { background: linear-gradient(90deg, #0f2b5c, #1a3a6d); padding: 12px; font-size: 13px; text-align: center; font-weight: 600; border-bottom: 1px solid #1e3a6d; display: flex; align-items: center; justify-content: center; gap: 8px; }
-        .top-notification i { color: #10b981; }
-        .header { padding: 25px 20px; max-width: 800px; margin: 0 auto; }
-        .brand { font-size: 26px; font-weight: 900; display: flex; align-items: center; gap: 8px; }
-        .brand span { color: #38bdf8; }
-        .tagline { color: #64748b; font-size: 14px; margin-top: 4px; }
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+        }
+        body {
+            background-color: #060b13;
+            color: #ffffff;
+            padding-bottom: 60px;
+        }
         
-        .search-container { max-width: 800px; margin: 10px auto; padding: 0 20px; position: relative; }
-        .search-box { width: 100%; background: #0f172a; border: 1px solid #1e293b; padding: 16px 16px 16px 45px; border-radius: 8px; color: white; font-size: 15px; outline: none; }
-        .search-container i { position: absolute; left: 35px; top: 50%; transform: translateY(-50%); color: #64748b; }
-        
-        .filter-container { max-width: 800px; margin: 15px auto; padding: 0 20px; display: flex; gap: 10px; overflow-x: auto; scrollbar-width: none; }
-        .filter-container::-webkit-scrollbar { display: none; }
-        .filter-btn { padding: 10px 20px; border-radius: 20px; font-size: 14px; font-weight: 600; text-decoration: none; border: 1px solid #1e293b; background: #0f172a; color: #94a3b8; white-space: nowrap; cursor: pointer; }
-        .filter-btn.active { background: #1d4ed8; color: white; border-color: #1d4ed8; }
-        
-        .app-view { display: none; }
-        .app-view.active-view { display: block; }
-        .inventory-section { max-width: 800px; margin: 25px auto 0 auto; padding: 0 20px; }
-        .section-title { font-size: 22px; font-weight: 700; margin-bottom: 20px; border-left: 4px solid #38bdf8; padding-left: 10px; }
-        
-        /* Dynamic Cards */
-        .product-card { background: #0f172a; border: 1px solid #1e293b; border-radius: 16px; padding: 24px; margin-bottom: 20px; position: relative; }
-        .card-header-row { display: flex; align-items: center; justify-content: space-between; margin-bottom: 15px; }
-        .product-icon-title { display: flex; align-items: center; gap: 15px; }
-        .product-icon { width: 45px; height: 45px; background: #060b13; border-radius: 12px; display: flex; align-items: center; justify-content: center; font-size: 20px; color: #38bdf8; }
-        .product-title-text { font-size: 20px; font-weight: 700; color: #ffffff; }
-        
-        .card-badge { background: rgba(16, 185, 129, 0.1); color: #10b981; padding: 4px 12px; border-radius: 20px; font-size: 12px; font-weight: 700; text-transform: uppercase; }
-        .card-badge.out { background: rgba(239, 68, 68, 0.1); color: #ef4444; }
-        .custom-tag { background: rgba(234, 179, 8, 0.1); color: #eab308; padding: 4px 12px; border-radius: 20px; font-size: 12px; font-weight: 700; text-transform: uppercase; margin-left: 8px; }
+        /* Top Aesthetic Branding Accent Banner */
+        .top-accent-line {
+            background: linear-gradient(90deg, #1d4ed8, #0088cc);
+            height: 4px;
+            width: 100%;
+        }
 
-        .product-description { color: #94a3b8; font-size: 14px; line-height: 1.6; margin-bottom: 20px; }
-        .price-container { margin-bottom: 20px; }
-        .price-label { color: #64748b; font-size: 12px; font-weight: 600; text-transform: uppercase; margin-bottom: 4px; }
-        .price-value { font-size: 28px; font-weight: 800; color: #ffffff; }
-        
-        .secure-order-btn { width: 100%; background: #1d4ed8; color: white; border: none; padding: 14px; border-radius: 10px; font-size: 15px; font-weight: 700; display: inline-flex; align-items: center; justify-content: center; gap: 8px; text-decoration: none; cursor: pointer; }
-        .secure-order-btn.disabled { background: #1e293b; color: #64748b; cursor: not-allowed; }
+        /* Hero Header System */
+        .header {
+            padding: 50px 20px 30px 20px;
+            text-align: center;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+        .logo-container {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 12px;
+            margin-bottom: 8px;
+        }
+        .logo-symbol {
+            font-size: 38px;
+            font-weight: 900;
+            color: #38bdf8;
+            background: linear-gradient(135deg, #38bdf8, #1d4ed8);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+        .brand-name {
+            font-size: 36px;
+            font-weight: 900;
+            letter-spacing: 1.5px;
+            color: #ffffff;
+        }
+        .brand-name span {
+            color: #38bdf8;
+        }
+        .slogan-tagline {
+            color: #94a3b8;
+            font-size: 13px;
+            text-transform: uppercase;
+            letter-spacing: 3px;
+            font-weight: 700;
+            margin-bottom: 25px;
+            border-bottom: 1px solid #1e293b;
+            padding-bottom: 15px;
+            display: inline-block;
+            width: 100%;
+            max-width: 400px;
+        }
+        .hero-main-title {
+            font-size: 42px;
+            font-weight: 900;
+            text-transform: uppercase;
+            line-height: 1.1;
+            margin-bottom: 15px;
+        }
+        .hero-main-title span {
+            color: #38bdf8;
+            display: block;
+            font-size: 46px;
+        }
+        .hero-description {
+            max-width: 580px;
+            margin: 20px auto 0 auto;
+            font-size: 15px;
+            color: #cbd5e1;
+            line-height: 1.6;
+        }
 
-        /* Rules Layout */
-        .disclaimer-section { background: #0c1322; border: 1px solid #eab308; border-radius: 12px; padding: 20px; margin-top: 15px; margin-bottom: 20px; }
-        .disclaimer-section h3 { font-size: 16px; font-weight: 700; color: #eab308; margin-bottom: 12px; display: flex; align-items: center; gap: 8px; }
-        .disclaimer-section p, .disclaimer-section li { font-size: 13px; color: #94a3b8; line-height: 1.6; margin-bottom: 10px; }
-        .disclaimer-section ul { padding-left: 20px; }
-        .responsibility-section { background: #0f172a; border: 1px solid #ef4444; border-radius: 12px; padding: 20px; margin-bottom: 35px; }
-        .responsibility-section h3 { font-size: 16px; font-weight: 700; color: #ef4444; margin-bottom: 12px; display: flex; align-items: center; gap: 8px; }
-        .responsibility-section p, .responsibility-section li { font-size: 13px; color: #94a3b8; line-height: 1.6; margin-bottom: 10px; }
-        .responsibility-section ul { padding-left: 20px; }
-
-        .bottom-nav { position: fixed; bottom: 0; left: 0; right: 0; background: #0f172a; border-top: 1px solid #1e293b; display: flex; justify-content: space-around; padding: 12px 10px; z-index: 99; }
-        .nav-item { text-align: center; text-decoration: none; color: #64748b; display: flex; flex-direction: column; align-items: center; justify-content: center; background: none; border: none; cursor: pointer; width: 33%; }
-        .nav-item i { font-size: 20px; margin-bottom: 4px; }
-        .nav-title { font-size: 12px; font-weight: 600; }
-        .nav-item.active { color: #38bdf8; }
+        /* Grid Infrastructure */
+        .services-wrapper {
+            max-width: 1100px;
+            margin: 40px auto;
+            padding: 0 20px;
+        }
+        .services-header-badge {
+            font-size: 14px;
+            font-weight: 800;
+            text-transform: uppercase;
+            letter-spacing: 1.5px;
+            color: #ffffff;
+            margin-bottom: 30px;
+            background: #1d4ed8;
+            padding: 10px 24px;
+            border-radius: 4px;
+            display: inline-block;
+        }
+        .services-grid-layout {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
+            gap: 20px;
+        }
         
-        .floating-tg { position: fixed; bottom: 85px; right: 20px; background: #0088cc; color: white; width: 50px; height: 50px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 22px; box-shadow: 0 4px 12px rgba(0,0,0,0.3); border: none; cursor: pointer; z-index: 100; }
-        .loading-screen { text-align: center; padding: 50px; color: #64748b; font-size: 16px; }
+        /* Interactive Cards */
+        .card-component {
+            background: #0f172a;
+            border: 1px solid #1e293b;
+            border-radius: 12px;
+            padding: 25px 20px;
+            text-align: center;
+            cursor: pointer;
+            transition: transform 0.2s, border-color 0.2s;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            min-height: 310px;
+        }
+        .card-component:hover {
+            transform: translateY(-5px);
+            border-color: #38bdf8;
+        }
+        .card-icon-container {
+            width: 60px;
+            height: 60px;
+            background: #060b13;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 15px auto;
+            font-size: 24px;
+            color: #38bdf8;
+            border: 1px solid #1e293b;
+        }
+        .card-component h3 {
+            font-size: 14px;
+            font-weight: 800;
+            text-transform: uppercase;
+            color: #ffffff;
+            letter-spacing: 0.5px;
+            line-height: 1.3;
+            margin-bottom: 5px;
+        }
+        
+        /* Nested Pricing Layouts */
+        .price-display-box {
+            margin-bottom: 15px;
+            min-height: 52px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+        }
+        .price-main {
+            font-size: 16px;
+            font-weight: 800;
+            color: #10b981;
+        }
+        .price-sub {
+            font-size: 11px;
+            color: #64748b;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            margin-top: 2px;
+            line-height: 1.2;
+        }
+        
+        .card-action-trigger {
+            width: 100%;
+            background: #1e293b;
+            color: #38bdf8;
+            border: 1px solid #38bdf8;
+            padding: 10px;
+            border-radius: 6px;
+            font-size: 12px;
+            font-weight: 700;
+            text-transform: uppercase;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 6px;
+        }
+        .card-component:hover .card-action-trigger {
+            background: #1d4ed8;
+            color: #ffffff;
+            border-color: #1d4ed8;
+        }
+
+        /* Brand Credibility Panels & Custom Contact Segments */
+        .marketing-metrics-container {
+            max-width: 1100px;
+            margin: 50px auto;
+            padding: 0 20px;
+            display: grid;
+            grid-template-columns: 1.2fr 1fr;
+            gap: 25px;
+        }
+        @media (max-width: 768px) {
+            .marketing-metrics-container { grid-template-columns: 1fr; }
+        }
+        .panel-container {
+            background: #0f172a;
+            border: 1px solid #1e293b;
+            border-radius: 12px;
+            padding: 30px;
+        }
+        .panel-headline {
+            font-size: 15px;
+            font-weight: 800;
+            text-transform: uppercase;
+            color: #38bdf8;
+            margin-bottom: 20px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+        .value-list-items {
+            list-style: none;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 15px;
+        }
+        .value-list-items li {
+            font-size: 14px;
+            color: #cbd5e1;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            font-weight: 600;
+        }
+        .value-list-items i {
+            color: #10b981;
+        }
+        .secure-communication-button {
+            display: flex;
+            align-items: center;
+            gap: 18px;
+            background: #060b13;
+            border: 1px solid #1e293b;
+            padding: 18px 20px;
+            border-radius: 10px;
+            text-decoration: none;
+            color: #ffffff;
+        }
+        .secure-communication-button i {
+            font-size: 28px;
+            color: #38bdf8;
+        }
+        .communication-label {
+            font-size: 11px;
+            color: #64748b;
+            font-weight: 700;
+            text-transform: uppercase;
+        }
+        .communication-handle {
+            font-size: 16px;
+            font-weight: 700;
+        }
+
+        /* Disclaimer Footprint Layout */
+        .compliance-wrapper {
+            max-width: 1100px;
+            margin: 30px auto;
+            padding: 0 20px;
+        }
+        .compliance-box-inner {
+            background: #0c1322;
+            border: 1px solid #1e293b;
+            border-radius: 12px;
+            padding: 24px;
+            font-size: 13px;
+            color: #94a3b8;
+            line-height: 1.6;
+        }
+        .compliance-heading {
+            font-size: 12px;
+            font-weight: 800;
+            text-transform: uppercase;
+            color: #eab308;
+            margin-bottom: 6px;
+        }
+        .affiliation-heading {
+            font-size: 12px;
+            font-weight: 800;
+            text-transform: uppercase;
+            color: #ef4444;
+            margin-top: 16px;
+            margin-bottom: 6px;
+        }
+        .bottom-brand-statement {
+            text-align: center;
+            padding: 40px 20px;
+            border-top: 1px solid #1e293b;
+            margin-top: 60px;
+            font-size: 12px;
+            color: #64748b;
+            letter-spacing: 2px;
+            font-weight: 700;
+            text-transform: uppercase;
+        }
     </style>
 </head>
 <body>
 
-    <div class="top-notification">
-        <i class="fas fa-check-circle"></i> Connected to Real-time Inventory System.
-    </div>
+    <div class="top-accent-line"></div>
 
     <div class="header">
-        <div class="brand"><i class="fas fa-bolt"></i> AFFORD <span>LOGS</span></div>
-        <div class="tagline">Premium Digital Utility Assets Hub</div>
+        <div class="logo-container">
+            <div class="logo-symbol"><i class="fas fa-bolt"></i></div>
+            <div class="brand-name">AFFORD<span>LOGS</span></div>
+        </div>
+        <div class="slogan-tagline">Digital Access Made Easy</div>
+        <h1 class="hero-main-title">All Your Digital Needs <span>In One Place</span></h1>
+        <p class="hero-description">Fast, reliable and affordable digital services with worldwide support. Click an item below to lock in a slot or confirm current live exchange rates instantly via our desk.</p>
     </div>
 
-    <!-- VIEW 1: INVENTORY -->
-    <div id="inventoryView" class="app-view active-view">
-        <div class="search-container">
-            <i class="fas fa-search"></i>
-            <input type="text" id="searchInput" class="search-box" placeholder="Search live catalog...">
-        </div>
-
-        <div class="filter-container">
-            <div class="filter-btn active" onclick="filterCategory('all', this)">All Products</div>
-            <div class="filter-btn" onclick="filterCategory('social', this)">Social Accounts</div>
-            <div class="filter-btn" onclick="filterCategory('otp', this)">OTP & Virtual Numbers</div>
-        </div>
-
-        <div class="inventory-section">
-            <div class="section-title">Live Available Catalog</div>
-            <div id="loading" class="loading-screen"><i class="fas fa-spinner fa-spin"></i> Fetching live parameters...</div>
-            <div id="productsContainer"></div>
-        </div>
-    </div>
-
-    <!-- VIEW 2: RULES -->
-    <div id="ratesView" class="app-view">
-        <div class="inventory-section">
-            <div class="section-title">Exchange & Security Rules</div>
-            <div class="disclaimer-section">
-                <h3><i class="fas fa-exclamation-triangle"></i> Store Disclaimer</h3>
-                <p>All digital products, configuration logs, and virtual setup assets available on Affordlogs are structural utilities intended solely for legal application optimization, authorization testing, and private communication protocols.</p>
-                <ul>
-                    <li><strong>Replacement Policy:</strong> Warranty applies exclusively to invalid credentials upon immediate delivery.</li>
-                    <li><strong>No Refund Policy:</strong> Once credentials are dispatched, all premium asset setups are final.</li>
-                </ul>
+    <div class="services-wrapper">
+        <div class="services-header-badge">Our Services</div>
+        <div class="services-grid-layout">
+            
+            <!-- Module 1 -->
+            <div class="card-component" onclick="routeToDesk('eSIM Solutions')">
+                <div class="card-icon-container"><i class="fas fa-sim-card"></i></div>
+                <h3>eSIM Solutions</h3>
+                <div class="price-display-box">
+                    <div class="price-main">Live Rate</div>
+                    <div class="price-sub">Global Data Bundles</div>
+                </div>
+                <button class="card-action-trigger">Buy Now <i class="fas fa-chevron-right"></i></button>
             </div>
-            <div class="responsibility-section">
-                <h3><i class="fas fa-user-shield"></i> Buyer Responsibilities</h3>
-                <p>By proceeding with an order checkout, the purchasing client implicitly agrees to the following operational parameters:</p>
-                <ul>
-                    <li>You are solely accountable for maintaining pristine proxy environments (e.g., ExpressVPN or clean target geographic residential networks) during access initialization.</li>
-                    <li>Affordlogs holds zero liability for subsequent platform security suspensions triggered by device usage post-delivery.</li>
-                </ul>
+
+            <!-- Module 2 -->
+            <div class="card-component" onclick="routeToDesk('VPN Services')">
+                <div class="card-icon-container"><i class="fas fa-shield-alt"></i></div>
+                <h3>VPN Services</h3>
+                <div class="price-display-box">
+                    <div class="price-main">Best Market Price</div>
+                    <div class="price-sub">Premium Private Accounts</div>
+                </div>
+                <button class="card-action-trigger">Buy Now <i class="fas fa-chevron-right"></i></button>
             </div>
+
+            <!-- Module 3 -->
+            <div class="card-component" onclick="routeToDesk('Proxy Services')">
+                <div class="card-icon-container"><i class="fas fa-server"></i></div>
+                <h3>Proxy Services</h3>
+                <div class="price-display-box">
+                    <div class="price-main">High Speed</div>
+                    <div class="price-sub">Residential & Datacenter</div>
+                </div>
+                <button class="card-action-trigger">Buy Now <i class="fas fa-chevron-right"></i></button>
+            </div>
+
+            <!-- Module 4 -->
+            <div class="card-component" onclick="routeToDesk('Digital Communication Solutions')">
+                <div class="card-icon-container"><i class="fas fa-comments"></i></div>
+                <h3>Digital Communication Solutions</h3>
+                <div class="price-display-box">
+                    <div class="price-main">Instant Delivery</div>
+                    <div class="price-sub">App and Chat Setups</div>
+                </div>
+                <button class="card-action-trigger">Buy Now <i class="fas fa-chevron-right"></i></button>
+            </div>
+
+            <!-- Module 5 -->
+            <div class="card-component" onclick="routeToDesk('Social Media Services')">
+                <div class="card-icon-container"><i class="fas fa-thumbs-up"></i></div>
+                <h3>Social Media Services</h3>
+                <div class="price-display-box">
+                    <div class="price-main">₦2,500 / ₦5,500</div>
+                    <div class="price-sub">FB Random • USA Profiles • High Tier</div>
+                </div>
+                <button class="card-action-trigger">Buy Now <i class="fas fa-chevron-right"></i></button>
+            </div>
+
+            <!-- Module 6 -->
+            <div class="card-component" onclick="routeToDesk('Gift Card Services')">
+                <div class="card-icon-container"><i class="fas fa-gift"></i></div>
+                <h3>Gift Card Services</h3>
+                <div class="price-display-box">
+                    <div class="price-main">Top % Live Rates</div>
+                    <div class="price-sub">Apple • Steam • Amazon • Razer</div>
+                </div>
+                <button class="card-action-trigger">Buy Now <i class="fas fa-chevron-right"></i></button>
+            </div>
+
+            <!-- Module 7 -->
+            <div class="card-component" onclick="routeToDesk('Digital Payment Solutions')">
+                <div class="card-icon-container"><i class="fas fa-wallet"></i></div>
+                <h3>Digital Payment Solutions</h3>
+                <div class="price-display-box">
+                    <div class="price-main">Daily Pickups</div>
+                    <div class="price-sub">CashApp • Zelle • PayPal • Venmo • BTC</div>
+                </div>
+                <button class="card-action-trigger">Buy Now <i class="fas fa-chevron-right"></i></button>
+            </div>
+
+            <!-- Module 8 -->
+            <div class="card-component" onclick="routeToDesk('Online Business Tools')">
+                <div class="card-icon-container"><i class="fas fa-briefcase"></i></div>
+                <h3>Online Business Tools</h3>
+                <div class="price-display-box">
+                    <div class="price-main">Premium Access</div>
+                    <div class="price-sub">Business & Utility Tools</div>
+                </div>
+                <button class="card-action-trigger">Buy Now <i class="fas fa-chevron-right"></i></button>
+            </div>
+
+            <!-- Module 9 -->
+            <div class="card-component" onclick="routeToDesk('Virtual Number Solutions')">
+                <div class="card-icon-container"><i class="fas fa-phone-alt"></i></div>
+                <h3>Virtual Number Solutions</h3>
+                <div class="price-display-box">
+                    <div class="price-main">₦3,000</div>
+                    <div class="price-sub">textPlus & OTP Verification</div>
+                </div>
+                <button class="card-action-trigger">Buy Now <i class="fas fa-chevron-right"></i></button>
+            </div>
+
+            <!-- Module 10 -->
+            <div class="card-component" onclick="routeToDesk('General Customer Support Desk')">
+                <div class="card-icon-container"><i class="fas fa-headset"></i></div>
+                <h3>Customer Support</h3>
+                <div class="price-display-box">
+                    <div class="price-main">24/7 Active</div>
+                    <div class="price-sub">Free Help & General Queries</div>
+                </div>
+                <button class="card-action-trigger">Get Support <i class="fas fa-chevron-right"></i></button>
+            </div>
+
         </div>
     </div>
 
-    <!-- BOTTOM NAVBAR -->
-    <div class="bottom-nav">
-        <button id="navInventoryBtn" class="nav-item active" onclick="switchPage('inventory')">
-            <i class="fas fa-store"></i>
-            <span class="nav-title">Inventory</span>
-        </button>
-        <button id="navRatesBtn" class="nav-item" onclick="switchPage('rates')">
-            <i class="fas fa-history"></i>
-            <span class="nav-title">Rates & Rules</span>
-        </button>
+    <div class="marketing-metrics-container">
+        <!-- Brand Perks -->
+        <div class="panel-container">
+            <div class="panel-headline"><i class="fas fa-shield-alt"></i> Why Choose Affordlogs?</div>
+            <ul class="value-list-items">
+                <li><i class="fas fa-check-circle"></i> Fast Delivery</li>
+                <li><i class="fas fa-check-circle"></i> Trusted Service</li>
+                <li><i class="fas fa-check-circle"></i> Affordable Pricing</li>
+                <li><i class="fas fa-check-circle"></i> Secure Transactions</li>
+                <li><i class="fas fa-check-circle"></i> Worldwide Support</li>
+                <li><i class="fas fa-check-circle"></i> Quick Response Time</li>
+            </ul>
+        </div>
+
+        <!-- Secure Handle Hub (Phone Number Fully Blocked & Excluded) -->
+        <div class="panel-container" style="display: flex; flex-direction: column; justify-content: space-between; gap: 20px;">
+            <div>
+                <div class="panel-headline"><i class="fas fa-user-check"></i> Contact Us</div>
+                <p style="font-size: 14px; color: #94a3b8; line-height: 1.5;">Connect directly with our verification operators for secure token deliveries and rate checks:</p>
+            </div>
+            <a href="https://t.me/afford_logs" target="_blank" class="secure-communication-button">
+                <i class="fab fa-telegram-plane"></i>
+                <div>
+                    <div class="communication-label">Official Telegram Desk</div>
+                    <div class="communication-handle">@afford_logs</div>
+                </div>
+            </a>
+        </div>
     </div>
 
-    <!-- FLOATING ASSISTANCE HELPDESK -->
-    <button class="floating-tg" onclick="triggerSupport()">
-        <i class="fas fa-headset"></i>
-    </button>
+    <!-- Disclaimers & Compliance Framework -->
+    <div class="compliance-wrapper">
+        <div class="compliance-box-inner">
+            <div class="compliance-heading"><i class="fas fa-gavel"></i> Terms & Disclaimer</div>
+            <p>All services are intended for lawful use only. Customers are responsible for how purchased services are used. Once a service is delivered and confirmed working, responsibility transfers to the buyer.</p>
+            
+            <div class="affiliation-heading"><i class="fas fa-ban"></i> We Are Not Affiliated With</div>
+            <p>WhatsApp, Telegram, Meta, Google, X (Twitter) or any third-party platform. We are an independent digital services provider.</p>
+        </div>
+    </div>
 
+    <div class="bottom-brand-statement">
+        Affordlogs – Digital Access Made Easy
+    </div>
+
+    <!-- Automated Order Link Construction Script -->
     <script>
-        const TELEGRAM_HANDLE = "afford_logs";
-        // PASTE YOUR PUBLISHED GOOGLE SHEET CSV LINK HERE:
-        const SHEET_CSV_URL = "https://docs.google.com/spreadsheets/d/e/2PACX-1vS5pL5bZ-O_Z9N1u9Uo_eE3P4Xh8e-01-Vf_T0nKBl5f_G2p_GZ1Rz7n8V9XpLgE_uO5_pM_VfM_N5P/pub?output=csv"; 
+        const PRIMARY_HANDLE = "afford_logs";
 
-        let globalProducts = [];
-
-        // Simple CSV Parser Engine
-        function parseCSV(text) {
-            let lines = text.split('\n');
-            let result = [];
-            let headers = lines[0].split(',').map(h => h.trim().replace(/"/g, ''));
+        function routeToDesk(selectedService) {
+            let detailSuffix = "";
             
-            for(let i = 1; i < lines.length; i++) {
-                if(!lines[i]) continue;
-                // Simple split by comma ignoring internal quotes for now
-                let obj = {};
-                let currentline = lines[i].split(',');
-                
-                headers.forEach((header, index) => {
-                    obj[header] = currentline[index] ? currentline[index].trim().replace(/"/g, '') : '';
-                });
-                result.push(obj);
-            }
-            return result;
-        }
-
-        // Fetch Data directly from Google Sheet
-        async function fetchLiveInventory() {
-            try {
-                const response = await fetch(SHEET_CSV_URL);
-                const dataText = await response.text();
-                globalProducts = parseCSV(dataText);
-                document.getElementById('loading').style.display = 'none';
-                renderProducts(globalProducts);
-            } catch (error) {
-                document.getElementById('loading').innerHTML = "<i class='fas fa-exclamation-circle' style='color:#ef4444;'></i> Sync connection failed. Refresh page.";
-                console.error("Error loading sheet data:", error);
-            }
-        }
-
-        function renderProducts(products) {
-            const container = document.getElementById('productsContainer');
-            container.innerHTML = '';
-            
-            products.forEach(item => {
-                const isOutOfStock = item.Status.toLowerCase() === 'out of stock';
-                const badgeHtml = item.Badge ? `<span class="custom-tag">${item.Badge}</span>` : '';
-                const clickAction = isOutOfStock ? '' : `onclick="triggerOrder('${item.Name}', '${item.Price}')"`;
-                const btnClass = isOutOfStock ? 'secure-order-btn disabled' : 'secure-order-btn';
-                const btnText = isOutOfStock ? '<i class="fas fa-ban"></i> Out of Stock' : '<i class="fas fa-shopping-cart"></i> Secure Order via Telegram';
-                const statusBadgeClass = isOutOfStock ? 'card-badge out' : 'card-badge';
-
-                const card = `
-                    <div class="product-card" data-category="${item.Category.toLowerCase()}" data-title="${item.Name.toLowerCase()} ${item.Description.toLowerCase()}">
-                        <div class="card-header-row">
-                            <div class="product-icon-title">
-                                <div class="product-icon"><i class="fas fa-box"></i></div>
-                                <div class="product-title-text">${item.Name} ${badgeHtml}</div>
-                            </div>
-                            <span class="${statusBadgeClass}">${item.Status}</span>
-                        </div>
-                        <p class="product-description">${item.Description}</p>
-                        <div class="price-container">
-                            <div class="price-label">Price Parameter</div>
-                            <div class="price-value">${item.Price}</div>
-                        </div>
-                        <button class="${btnClass}" ${clickAction}>${btnText}</button>
-                    </div>
-                `;
-                container.innerHTML += card;
-            });
-        }
-
-        function triggerOrder(productName, productPrice) {
-            const baseText = `Hello Affordlogs, I want to purchase ${productName} for ${productPrice}. Please process my order.`;
-            window.open(`https://t.me/${TELEGRAM_HANDLE}?text=${encodeURIComponent(baseText)}`, '_blank');
-        }
-
-        function triggerSupport() {
-            const supportText = "Hello Affordlogs Support, I need assistance with a digital utility asset.";
-            window.open(`https://t.me/${TELEGRAM_HANDLE}?text=${encodeURIComponent(supportText)}`, '_blank');
-        }
-
-        function switchPage(targetPage) {
-            document.querySelectorAll('.app-view').forEach(view => view.classList.remove('active-view'));
-            document.querySelectorAll('.nav-item').forEach(item => item.classList.remove('active'));
-            if(targetPage === 'inventory') {
-                document.getElementById('inventoryView').classList.add('active-view');
-                document.getElementById('navInventoryBtn').classList.add('active');
+            // Appends custom parameters to pre-filled message depending on selection
+            if (selectedService === 'Social Media Services') {
+                detailSuffix = " (Inquiring about Facebook Random [₦2,500], USA Created Profiles [₦5,500], or Higher Tiers)";
+            } else if (selectedService === 'Virtual Number Solutions') {
+                detailSuffix = " (Inquiring about textPlus / OTP setup [Fixed ₦3,000])";
             } else {
-                document.getElementById('ratesView').classList.add('active-view');
-                document.getElementById('navRatesBtn').classList.add('active');
+                detailSuffix = " to check current live rate/value details";
             }
-            window.scrollTo({top: 0, behavior: 'smooth'});
+
+            const formattedMessage = `Hello Affordlogs, I am visiting your official website dashboard. I would like to lock in an order for: ${selectedService}${detailSuffix}.`;
+            const secureUrl = `https://t.me/${PRIMARY_HANDLE}?text=${encodeURIComponent(formattedMessage)}`;
+            window.open(secureUrl, '_blank');
         }
-
-        // Live Frontend Search Engine Filter
-        document.getElementById('searchInput').addEventListener('input', function(e) {
-            const searchValue = e.target.value.toLowerCase().trim();
-            document.querySelectorAll('.product-card').forEach(card => {
-                const searchTags = card.getAttribute('data-title') || '';
-                card.style.display = searchTags.includes(searchValue) ? "block" : "none";
-            });
-        });
-
-        function filterCategory(category, buttonElement) {
-            document.querySelectorAll('.filter-btn').forEach(btn => btn.classList.remove('active'));
-            buttonElement.classList.add('active');
-            document.querySelectorAll('.product-card').forEach(card => {
-                if(category === 'all') {
-                    card.style.display = "block";
-                } else {
-                    card.style.display = card.getAttribute('data-category') === category ? "block" : "none";
-                }
-            });
-        }
-
-        // Run Engine on load
-        fetchLiveInventory();
     </script>
 </body>
 </html>
