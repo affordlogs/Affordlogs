@@ -40,29 +40,30 @@
             text-align: left;
             margin: 20px 0;
         }
-        .button-group {
-            display: flex;
-            flex-direction: column;
-            gap: 12px;
-            margin-top: 25px;
-        }
-        .btn-contact {
-            display: inline-flex;
-            align-items: center;
-            justify-content: center;
-            gap: 10px;
+        .btn-telegram {
+            display: inline-block;
+            background: #0088cc;
             color: white;
-            padding: 14px 25px;
+            padding: 12px 25px;
             text-decoration: none;
             border-radius: 25px;
             font-weight: bold;
-            font-size: 16px;
+            margin-top: 20px;
             transition: 0.3s;
         }
-        .btn-telegram { background: #0088cc; }
         .btn-telegram:hover { background: #006699; }
-        
-        .btn-whatsapp { background: #25D366; }
+
+        .btn-whatsapp {
+            display: inline-block;
+            background: #25D366;
+            color: white;
+            padding: 12px 25px;
+            text-decoration: none;
+            border-radius: 25px;
+            font-weight: bold;
+            margin-top: 15px;
+            transition: 0.3s;
+        }
         .btn-whatsapp:hover { background: #128C7E; }
     </style>
 </head>
@@ -81,17 +82,17 @@
             Be sure to change your password after logging in.
         </div>
 
-        <div class="button-group">
-            <!-- Telegram Button -->
-            <a href="https://t.me/afford_logs" class="btn-contact btn-telegram" target="_blank">
-                <i class="fab fa-telegram-plane"></i> Order via Telegram
-            </a>
+        <!-- Telegram Button -->
+        <a href="https://t.me/afford_logs" class="btn-telegram" target="_blank">
+            <i class="fab fa-telegram-plane"></i> Contact on Telegram to Buy
+        </a>
 
-            <!-- WhatsApp Button -->
-            <a href="https://wa.me/2349039919965?text=Hello%20Affordlogs,%20I%20want%20to%20buy%20the%20TextPlus%20account" class="btn-contact btn-whatsapp" target="_blank">
-                <i class="fab fa-whatsapp"></i> Order via WhatsApp
-            </a>
-        </div>
+        <br>
+
+        <!-- WhatsApp Button -->
+        <a href="https://wa.me/2349039919965?text=Hello%20Affordlogs,%20I%20want%20to%20buy%20the%20TextPlus%20account" class="btn-whatsapp" target="_blank">
+            <i class="fab fa-whatsapp"></i> Contact on WhatsApp to Buy
+        </a>
     </div>
 
 </body>
