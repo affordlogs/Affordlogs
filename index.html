@@ -3,97 +3,363 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>TEXTPLUS & NEXTPLUS - Affordlogs</title>
+    <title>Affordlogs | Premium Digital Utility Assets Hub</title>
     <!-- FontAwesome for Icons -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <style>
+        /* Base Reset & Theme Variables */
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+        }
         body {
-            background-color: #0f172a;
-            color: #f8fafc;
-            font-family: Arial, sans-serif;
-            padding: 20px;
+            background-color: #060b13;
+            color: #ffffff;
+            padding-bottom: 100px;
+        }
+
+        /* Top Notification Bar (From image_8.png) */
+        .top-notification {
+            background: linear-gradient(90deg, #0f2b5c, #1a3a6d);
+            padding: 12px;
+            font-size: 13px;
             text-align: center;
+            font-weight: 600;
+            border-bottom: 1px solid #1e3a6d;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 8px;
         }
-        .product-container {
-            max-width: 600px;
-            margin: 40px auto;
-            background: #1e293b;
-            padding: 30px;
-            border-radius: 12px;
-            box-shadow: 0 4px 15px rgba(0,0,0,0.5);
+        .top-notification i {
+            color: #10b981;
         }
-        h1 { color: #38bdf8; font-size: 24px; margin-bottom: 20px; }
-        .info-box {
+
+        /* Main Header */
+        .header {
+            padding: 25px 20px;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+        .brand {
+            font-size: 26px;
+            font-weight: 900;
+            letter-spacing: 0.5px;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+        .brand span {
+            color: #38bdf8;
+        }
+        .tagline {
+            color: #64748b;
+            font-size: 14px;
+            margin-top: 4px;
+            font-weight: 500;
+        }
+
+        /* Hero Text Area */
+        .hero-section {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 30px 20px;
             text-align: left;
-            background: #0f172a;
-            padding: 15px;
-            border-radius: 8px;
-            margin: 20px 0;
+        }
+        .hero-title {
+            font-size: 36px;
+            font-weight: 800;
+            line-height: 1.2;
+            margin-bottom: 15px;
+        }
+        .hero-title span {
+            color: #38bdf8;
+        }
+        .hero-desc {
+            color: #94a3b8;
+            font-size: 15px;
             line-height: 1.6;
         }
-        .warning-box {
-            background: rgba(234, 179, 8, 0.1);
-            border-left: 4px solid #eab308;
-            color: #eab308;
-            padding: 15px;
-            border-radius: 4px;
-            text-align: left;
-            margin: 20px 0;
+
+        /* Search Bar Setup */
+        .search-container {
+            max-width: 800px;
+            margin: 10px auto;
+            padding: 0 20px;
+            position: relative;
         }
-        .btn-telegram {
-            display: inline-block;
+        .search-box {
+            width: 100%;
+            background: #0f172a;
+            border: 1px solid #1e293b;
+            padding: 16px 16px 16px 45px;
+            border-radius: 8px;
+            color: white;
+            font-size: 15px;
+            outline: none;
+        }
+        .search-container i {
+            position: absolute;
+            left: 35px;
+            top: 50%;
+            transform: translateY(-50%);
+            color: #64748b;
+        }
+
+        /* Filter Tabs Buttons */
+        .filter-container {
+            max-width: 800px;
+            margin: 15px auto;
+            padding: 0 20px;
+            display: flex;
+            gap: 10px;
+            overflow-x: auto;
+            white-space: nowrap;
+        }
+        .filter-btn {
+            padding: 10px 20px;
+            border-radius: 20px;
+            font-size: 14px;
+            font-weight: 600;
+            text-decoration: none;
+            border: 1px solid #1e293b;
+            background: #0f172a;
+            color: #94a3b8;
+        }
+        .filter-btn.active {
+            background: #1d4ed8;
+            color: white;
+            border-color: #1d4ed8;
+        }
+
+        /* Inventory Sections Layout */
+        .inventory-section {
+            max-width: 800px;
+            margin: 30px auto 0 auto;
+            padding: 0 20px;
+        }
+        .section-title {
+            font-size: 22px;
+            font-weight: 700;
+            margin-bottom: 20px;
+            padding-left: 10px;
+            border-left: 4px solid #38bdf8;
+        }
+
+        /* Product Cards Grid Layout */
+        .product-grid {
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+        }
+        .product-card {
+            background: #0f172a;
+            border: 1px solid #1e293b;
+            border-radius: 12px;
+            padding: 20px;
+        }
+        .product-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            margin-bottom: 15px;
+        }
+        .product-name {
+            font-size: 18px;
+            font-weight: 700;
+            color: #38bdf8;
+        }
+        .product-price {
+            background: rgba(56, 189, 248, 0.1);
+            color: #38bdf8;
+            padding: 6px 12px;
+            border-radius: 6px;
+            font-weight: 700;
+            font-size: 15px;
+        }
+        
+        /* Account Config Specifications */
+        .product-specs {
+            background: #060b13;
+            padding: 12px;
+            border-radius: 6px;
+            font-size: 14px;
+            line-height: 1.5;
+            color: #cbd5e1;
+            margin-bottom: 12px;
+        }
+        .product-specs strong {
+            color: #94a3b8;
+        }
+        .product-warning {
+            color: #fbbf24;
+            font-size: 13px;
+            font-weight: 500;
+            margin-bottom: 15px;
+            display: flex;
+            align-items: center;
+            gap: 6px;
+        }
+
+        /* Quick Action Checkout Row */
+        .action-buttons {
+            display: flex;
+            gap: 10px;
+        }
+        .action-btn {
+            flex: 1;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: 8px;
+            padding: 12px;
+            border-radius: 8px;
+            font-weight: 700;
+            font-size: 14px;
+            text-decoration: none;
+            color: white;
+            transition: opacity 0.2s;
+        }
+        .action-btn:hover {
+            opacity: 0.9;
+        }
+        .btn-tg { background: #0088cc; }
+        .btn-wa { background: #25D366; }
+
+        /* Persistent Floating Corner Contact Button */
+        .floating-contact {
+            position: fixed;
+            bottom: 25px;
+            right: 25px;
             background: #0088cc;
             color: white;
-            padding: 12px 25px;
+            width: 55px;
+            height: 55px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 24px;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.4);
             text-decoration: none;
-            border-radius: 25px;
-            font-weight: bold;
-            margin-top: 20px;
-            transition: 0.3s;
+            z-index: 100;
         }
-        .btn-telegram:hover { background: #006699; }
-
-        .btn-whatsapp {
-            display: inline-block;
-            background: #25D366;
-            color: white;
-            padding: 12px 25px;
-            text-decoration: none;
-            border-radius: 25px;
-            font-weight: bold;
-            margin-top: 15px;
-            transition: 0.3s;
-        }
-        .btn-whatsapp:hover { background: #128C7E; }
     </style>
 </head>
 <body>
 
-    <div class="product-container">
-        <h1>TEXTPLUS & NEXTPLUS Google Login</h1>
-        
-        <div class="info-box">
-            <p><strong>Location/VPN:</strong> OCTOHIDE VPN Location USA-UK Or Express Vpn USA Any City ✔</p>
-            <p><strong>Instructions:</strong> Use Textplus Apps Sign In With Google.</p>
-        </div>
-
-        <div class="warning-box">
-            <strong><i class="fas fa-exclamation-triangle"></i> [Warning ⚠]</strong> 
-            Be sure to change your password after logging in.
-        </div>
-
-        <!-- Telegram Button -->
-        <a href="https://t.me/afford_logs" class="btn-telegram" target="_blank">
-            <i class="fab fa-telegram-plane"></i> Contact on Telegram to Buy
-        </a>
-
-        <br>
-
-        <!-- WhatsApp Button -->
-        <a href="https://wa.me/2349039919965?text=Hello%20Affordlogs,%20I%20want%20to%20buy%20the%20TextPlus%20account" class="btn-whatsapp" target="_blank">
-            <i class="fab fa-whatsapp"></i> Contact on WhatsApp to Buy
-        </a>
+    <!-- Live Stock Bar -->
+    <div class="top-notification">
+        <i class="fas fa-check-circle"></i> Live Marketplace Stock Restocked. Tap items below to order instantly!
     </div>
+
+    <!-- Header Block -->
+    <div class="header">
+        <div class="brand"><i class="fas fa-bolt"></i> AFFORD <span>LOGS</span></div>
+        <div class="tagline">Premium Digital Utility Assets Hub</div>
+    </div>
+
+    <!-- Main Content Summary -->
+    <div class="hero-section">
+        <h1 class="hero-title">Secure Marketplace for <span>Premium Digital Assets</span></h1>
+        <p class="hero-desc">Instant, guaranteed marketplace distribution logs for fully configured communication profiles, virtual setups, and global data roaming logs.</p>
+    </div>
+
+    <!-- Live Storefront Filters -->
+    <div class="search-container">
+        <i class="fas fa-search"></i>
+        <input type="text" class="search-box" placeholder="Search for accounts, bypass logs, tools...">
+    </div>
+
+    <div class="filter-container">
+        <a href="#" class="filter-btn active">All Products</a>
+        <a href="#" class="filter-btn">Social Accounts</a>
+        <a href="#" class="filter-btn">OTP & Virtual Numbers</a>
+    </div>
+
+    <!-- Inventory Section -->
+    <div class="inventory-section">
+        <div class="section-title">All Available Inventory</div>
+        <div class="product-grid">
+
+            <!-- PRODUCT 1: textPlus -->
+            <div class="product-card">
+                <div class="product-header">
+                    <div class="product-name">textPlus & NextPlus Account</div>
+                    <div class="product-price">₦2,500</div>
+                </div>
+                <div class="product-specs">
+                    <strong>Location/VPN:</strong> OCTOHIDE VPN Location USA-UK Or Express Vpn USA Any City ✔<br>
+                    <strong>Instructions:</strong> Use Textplus Apps Sign In With Google.
+                </div>
+                <div class="product-warning">
+                    <i class="fas fa-exclamation-triangle"></i> Be sure to change your password after logging in.
+                </div>
+                <div class="action-buttons">
+                    <a href="https://t.me/afford_logs" target="_blank" class="action-btn btn-tg">
+                        <i class="fab fa-telegram-plane"></i> Buy on Telegram
+                    </a>
+                    <a href="https://wa.me/2349039919965?text=Hello%20Affordlogs,%20I%20want%20to%20buy%20the%20TextPlus%20account" target="_blank" class="action-btn btn-wa">
+                        <i class="fab fa-whatsapp"></i> Buy on WhatsApp
+                    </a>
+                </div>
+            </div>
+
+            <!-- PRODUCT 2: Facebook Layout Entry -->
+            <div class="product-card">
+                <div class="product-header">
+                    <div class="product-name">Facebook Ads / Marketplace Logs</div>
+                    <div class="product-price">₦5,000</div>
+                </div>
+                <div class="product-specs">
+                    <strong>Configuration:</strong> Fully aged profiles, cookies inclusive, completely active marketplace access.<br>
+                    <strong>Instructions:</strong> Log in via specified clean mobile proxy or designated anti-detect browser profile.
+                </div>
+                <div class="product-warning">
+                    <i class="fas fa-exclamation-triangle"></i> Validate configurations upon entry. Changes must follow strict guidelines.
+                </div>
+                <div class="action-buttons">
+                    <a href="https://t.me/afford_logs" target="_blank" class="action-btn btn-tg">
+                        <i class="fab fa-telegram-plane"></i> Buy on Telegram
+                    </a>
+                    <a href="https://wa.me/2349039919965?text=Hello%20Affordlogs,%20I%20want%20to%20buy%20the%20Facebook%20account" target="_blank" class="action-btn btn-wa">
+                        <i class="fab fa-whatsapp"></i> Buy on WhatsApp
+                    </a>
+                </div>
+            </div>
+
+            <!-- PRODUCT 3: TikTok Layout Entry -->
+            <div class="product-card">
+                <div class="product-header">
+                    <div class="product-name">TikTok Ads / Organic Agency Account</div>
+                    <div class="product-price">₦6,500</div>
+                </div>
+                <div class="product-specs">
+                    <strong>Region Target:</strong> US/UK Targeting Enabled.<br>
+                    <strong>Instructions:</strong> Use high-quality static residential proxy for initial login verification.
+                </div>
+                <div class="product-warning">
+                    <i class="fas fa-exclamation-triangle"></i> Do not bind security details without checking currency settings.
+                </div>
+                <div class="action-buttons">
+                    <a href="https://t.me/afford_logs" target="_blank" class="action-btn btn-tg">
+                        <i class="fab fa-telegram-plane"></i> Buy on Telegram
+                    </a>
+                    <a href="https://wa.me/2349039919965?text=Hello%20Affordlogs,%20I%20want%20to%20buy%20the%20TikTok%20account" target="_blank" class="action-btn btn-wa">
+                        <i class="fab fa-whatsapp"></i> Buy on WhatsApp
+                    </a>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+    <!-- Sticky Floating Corner Action Redirect (From image_8.png) -->
+    <a href="https://t.me/afford_logs" class="floating-contact" target="_blank">
+        <i class="fab fa-telegram-plane"></i>
+    </a>
 
 </body>
 </html>
