@@ -3,514 +3,193 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Affordlogs | Digital Access Made Easy</title>
-    <!-- Font Awesome for sleek, modern service icons -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <title>Digital Storefront</title>
     <style>
-        * {
-            box-sizing: border-box;
-            margin: 0;
-            padding: 0;
-            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
-        }
         body {
-            background-color: #060b13;
-            color: #ffffff;
-            padding-bottom: 60px;
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+            background-color: #f4f6f9;
+            margin: 0;
+            padding: 20px;
+            color: #333;
         }
-        
-        /* Top Aesthetic Branding Accent Banner */
-        .top-accent-line {
-            background: linear-gradient(90deg, #1d4ed8, #0088cc);
-            height: 4px;
-            width: 100%;
-        }
-
-        /* Hero Header System */
-        .header {
-            padding: 50px 20px 30px 20px;
-            text-align: center;
-            max-width: 800px;
+        .store-container {
+            max-width: 600px;
             margin: 0 auto;
         }
-        .logo-container {
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            gap: 12px;
-            margin-bottom: 8px;
-        }
-        .logo-symbol {
-            font-size: 38px;
-            font-weight: 900;
-            color: #38bdf8;
-            background: linear-gradient(135deg, #38bdf8, #1d4ed8);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-        }
-        .brand-name {
-            font-size: 36px;
-            font-weight: 900;
-            letter-spacing: 1.5px;
-            color: #ffffff;
-        }
-        .brand-name span {
-            color: #38bdf8;
-        }
-        .slogan-tagline {
-            color: #94a3b8;
-            font-size: 13px;
+        .category-title {
+            font-size: 1.2rem;
+            color: #4a5568;
+            margin: 25px 0 10px 0;
             text-transform: uppercase;
-            letter-spacing: 3px;
-            font-weight: 700;
-            margin-bottom: 25px;
-            border-bottom: 1px solid #1e293b;
-            padding-bottom: 15px;
-            display: inline-block;
-            width: 100%;
-            max-width: 400px;
+            letter-spacing: 0.5px;
+            border-bottom: 2px solid #e2e8f0;
+            padding-bottom: 5px;
         }
-        .hero-main-title {
-            font-size: 42px;
-            font-weight: 900;
-            text-transform: uppercase;
-            line-height: 1.1;
-            margin-bottom: 15px;
-        }
-        .hero-main-title span {
-            color: #38bdf8;
-            display: block;
-            font-size: 46px;
-        }
-        .hero-description {
-            max-width: 580px;
-            margin: 20px auto 0 auto;
-            font-size: 15px;
-            color: #cbd5e1;
-            line-height: 1.6;
-        }
-
-        /* Grid Infrastructure */
-        .services-wrapper {
-            max-width: 1100px;
-            margin: 40px auto;
-            padding: 0 20px;
-        }
-        .services-header-badge {
-            font-size: 14px;
-            font-weight: 800;
-            text-transform: uppercase;
-            letter-spacing: 1.5px;
-            color: #ffffff;
-            margin-bottom: 30px;
-            background: #1d4ed8;
-            padding: 10px 24px;
-            border-radius: 4px;
-            display: inline-block;
-        }
-        .services-grid-layout {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
-            gap: 20px;
-        }
-        
-        /* Interactive Cards */
-        .card-component {
-            background: #0f172a;
-            border: 1px solid #1e293b;
+        .product-card {
+            background: #ffffff;
             border-radius: 12px;
-            padding: 25px 20px;
-            text-align: center;
-            cursor: pointer;
-            transition: transform 0.2s, border-color 0.2s;
+            padding: 20px;
+            margin-bottom: 15px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.04);
+            border: 1px solid #edf2f7;
+        }
+        .product-header {
             display: flex;
-            flex-direction: column;
             justify-content: space-between;
-            min-height: 310px;
+            align-items: flex-start;
         }
-        .card-component:hover {
-            transform: translateY(-5px);
-            border-color: #38bdf8;
+        .product-title {
+            font-size: 1.1rem;
+            font-weight: 700;
+            color: #1a202c;
+            margin: 0 0 8px 0;
         }
-        .card-icon-container {
-            width: 60px;
-            height: 60px;
-            background: #060b13;
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            margin: 0 auto 15px auto;
-            font-size: 24px;
-            color: #38bdf8;
-            border: 1px solid #1e293b;
+        .product-desc {
+            font-size: 0.9rem;
+            color: #718096;
+            margin: 0 0 15px 0;
+            line-height: 1.4;
         }
-        .card-component h3 {
-            font-size: 14px;
-            font-weight: 800;
-            text-transform: uppercase;
-            color: #ffffff;
-            letter-spacing: 0.5px;
-            line-height: 1.3;
-            margin-bottom: 5px;
-        }
-        
-        /* Nested Pricing Layouts */
-        .price-display-box {
-            margin-bottom: 15px;
-            min-height: 52px;
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            align-items: center;
-        }
-        .price-main {
-            font-size: 16px;
-            font-weight: 800;
-            color: #10b981;
-        }
-        .price-sub {
-            font-size: 11px;
-            color: #64748b;
-            font-weight: 600;
-            text-transform: uppercase;
-            letter-spacing: 0.5px;
-            margin-top: 2px;
-            line-height: 1.2;
-        }
-        
-        .card-action-trigger {
-            width: 100%;
-            background: #1e293b;
-            color: #38bdf8;
-            border: 1px solid #38bdf8;
-            padding: 10px;
+        .price-badge {
+            background-color: #ebf8ff;
+            color: #2b6cb0;
+            padding: 6px 12px;
             border-radius: 6px;
-            font-size: 12px;
-            font-weight: 700;
-            text-transform: uppercase;
-            cursor: pointer;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            gap: 6px;
-        }
-        .card-component:hover .card-action-trigger {
-            background: #1d4ed8;
-            color: #ffffff;
-            border-color: #1d4ed8;
-        }
-
-        /* Brand Credibility Panels & Custom Contact Segments */
-        .marketing-metrics-container {
-            max-width: 1100px;
-            margin: 50px auto;
-            padding: 0 20px;
-            display: grid;
-            grid-template-columns: 1.2fr 1fr;
-            gap: 25px;
-        }
-        @media (max-width: 768px) {
-            .marketing-metrics-container { grid-template-columns: 1fr; }
-        }
-        .panel-container {
-            background: #0f172a;
-            border: 1px solid #1e293b;
-            border-radius: 12px;
-            padding: 30px;
-        }
-        .panel-headline {
-            font-size: 15px;
-            font-weight: 800;
-            text-transform: uppercase;
-            color: #38bdf8;
-            margin-bottom: 20px;
-            display: flex;
-            align-items: center;
-            gap: 10px;
-        }
-        .value-list-items {
-            list-style: none;
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 15px;
-        }
-        .value-list-items li {
-            font-size: 14px;
-            color: #cbd5e1;
-            display: flex;
-            align-items: center;
-            gap: 10px;
             font-weight: 600;
+            font-size: 0.95rem;
+            display: inline-block;
         }
-        .value-list-items i {
-            color: #10b981;
-        }
-        .secure-communication-button {
-            display: flex;
-            align-items: center;
-            gap: 18px;
-            background: #060b13;
-            border: 1px solid #1e293b;
-            padding: 18px 20px;
-            border-radius: 10px;
-            text-decoration: none;
-            color: #ffffff;
-        }
-        .secure-communication-button i {
-            font-size: 28px;
-            color: #38bdf8;
-        }
-        .communication-label {
-            font-size: 11px;
-            color: #64748b;
-            font-weight: 700;
-            text-transform: uppercase;
-        }
-        .communication-handle {
-            font-size: 16px;
-            font-weight: 700;
-        }
-
-        /* Disclaimer Footprint Layout */
-        .compliance-wrapper {
-            max-width: 1100px;
-            margin: 30px auto;
-            padding: 0 20px;
-        }
-        .compliance-box-inner {
-            background: #0c1322;
-            border: 1px solid #1e293b;
-            border-radius: 12px;
-            padding: 24px;
-            font-size: 13px;
-            color: #94a3b8;
-            line-height: 1.6;
-        }
-        .compliance-heading {
-            font-size: 12px;
-            font-weight: 800;
-            text-transform: uppercase;
-            color: #eab308;
-            margin-bottom: 6px;
-        }
-        .affiliation-heading {
-            font-size: 12px;
-            font-weight: 800;
-            text-transform: uppercase;
-            color: #ef4444;
-            margin-top: 16px;
-            margin-bottom: 6px;
-        }
-        .bottom-brand-statement {
+        .buy-btn {
+            display: block;
+            width: 100%;
+            background-color: #3182ce;
+            color: white;
             text-align: center;
-            padding: 40px 20px;
-            border-top: 1px solid #1e293b;
-            margin-top: 60px;
-            font-size: 12px;
-            color: #64748b;
-            letter-spacing: 2px;
-            font-weight: 700;
-            text-transform: uppercase;
+            padding: 12px 0;
+            border-radius: 8px;
+            font-weight: 600;
+            text-decoration: none;
+            margin-top: 15px;
+            transition: background 0.2s;
+        }
+        .buy-btn:hover {
+            background-color: #2b6cb0;
         }
     </style>
 </head>
 <body>
 
-    <div class="top-accent-line"></div>
+<div class="store-container">
 
-    <div class="header">
-        <div class="logo-container">
-            <div class="logo-symbol"><i class="fas fa-bolt"></i></div>
-            <div class="brand-name">AFFORD<span>LOGS</span></div>
-        </div>
-        <div class="slogan-tagline">Digital Access Made Easy</div>
-        <h1 class="hero-main-title">All Your Digital Needs <span>In One Place</span></h1>
-        <p class="hero-description">Fast, reliable and affordable digital services with worldwide support. Click an item below to lock in a slot or confirm current live exchange rates instantly via our desk.</p>
+    <!-- VPN Section -->
+    <div class="category-title">🔒 Premium VPN Products</div>
+    
+    <div class="product-card">
+        <div class="product-title">1 Month Avast VPN</div>
+        <div class="product-desc">Secure account access validity for 30 days.</div>
+        <div class="price-badge">₦3,000.00</div>
+        <a href="#" class="buy-btn">Buy Now</a>
     </div>
 
-    <div class="services-wrapper">
-        <div class="services-header-badge">Our Services</div>
-        <div class="services-grid-layout">
-            
-            <!-- Module 1 -->
-            <div class="card-component" onclick="routeToDesk('eSIM Solutions')">
-                <div class="card-icon-container"><i class="fas fa-sim-card"></i></div>
-                <h3>eSIM Solutions</h3>
-                <div class="price-display-box">
-                    <div class="price-main">Live Rate</div>
-                    <div class="price-sub">Global Data Bundles</div>
-                </div>
-                <button class="card-action-trigger">Buy Now <i class="fas fa-chevron-right"></i></button>
-            </div>
-
-            <!-- Module 2 -->
-            <div class="card-component" onclick="routeToDesk('VPN Services')">
-                <div class="card-icon-container"><i class="fas fa-shield-alt"></i></div>
-                <h3>VPN Services</h3>
-                <div class="price-display-box">
-                    <div class="price-main">Best Market Price</div>
-                    <div class="price-sub">Premium Private Accounts</div>
-                </div>
-                <button class="card-action-trigger">Buy Now <i class="fas fa-chevron-right"></i></button>
-            </div>
-
-            <!-- Module 3 -->
-            <div class="card-component" onclick="routeToDesk('Proxy Services')">
-                <div class="card-icon-container"><i class="fas fa-server"></i></div>
-                <h3>Proxy Services</h3>
-                <div class="price-display-box">
-                    <div class="price-main">High Speed</div>
-                    <div class="price-sub">Residential & Datacenter</div>
-                </div>
-                <button class="card-action-trigger">Buy Now <i class="fas fa-chevron-right"></i></button>
-            </div>
-
-            <!-- Module 4 -->
-            <div class="card-component" onclick="routeToDesk('Digital Communication Solutions')">
-                <div class="card-icon-container"><i class="fas fa-comments"></i></div>
-                <h3>Digital Communication Solutions</h3>
-                <div class="price-display-box">
-                    <div class="price-main">Instant Delivery</div>
-                    <div class="price-sub">App and Chat Setups</div>
-                </div>
-                <button class="card-action-trigger">Buy Now <i class="fas fa-chevron-right"></i></button>
-            </div>
-
-            <!-- Module 5 -->
-            <div class="card-component" onclick="routeToDesk('Social Media Services')">
-                <div class="card-icon-container"><i class="fas fa-thumbs-up"></i></div>
-                <h3>Social Media Services</h3>
-                <div class="price-display-box">
-                    <div class="price-main">₦2,500 / ₦5,500</div>
-                    <div class="price-sub">FB Random • USA Profiles • High Tier</div>
-                </div>
-                <button class="card-action-trigger">Buy Now <i class="fas fa-chevron-right"></i></button>
-            </div>
-
-            <!-- Module 6 -->
-            <div class="card-component" onclick="routeToDesk('Gift Card Services')">
-                <div class="card-icon-container"><i class="fas fa-gift"></i></div>
-                <h3>Gift Card Services</h3>
-                <div class="price-display-box">
-                    <div class="price-main">Top % Live Rates</div>
-                    <div class="price-sub">Apple • Steam • Amazon • Razer</div>
-                </div>
-                <button class="card-action-trigger">Buy Now <i class="fas fa-chevron-right"></i></button>
-            </div>
-
-            <!-- Module 7 -->
-            <div class="card-component" onclick="routeToDesk('Digital Payment Solutions')">
-                <div class="card-icon-container"><i class="fas fa-wallet"></i></div>
-                <h3>Digital Payment Solutions</h3>
-                <div class="price-display-box">
-                    <div class="price-main">Daily Pickups</div>
-                    <div class="price-sub">CashApp • Zelle • PayPal • Venmo • BTC</div>
-                </div>
-                <button class="card-action-trigger">Buy Now <i class="fas fa-chevron-right"></i></button>
-            </div>
-
-            <!-- Module 8 -->
-            <div class="card-component" onclick="routeToDesk('Online Business Tools')">
-                <div class="card-icon-container"><i class="fas fa-briefcase"></i></div>
-                <h3>Online Business Tools</h3>
-                <div class="price-display-box">
-                    <div class="price-main">Premium Access</div>
-                    <div class="price-sub">Business & Utility Tools</div>
-                </div>
-                <button class="card-action-trigger">Buy Now <i class="fas fa-chevron-right"></i></button>
-            </div>
-
-            <!-- Module 9 -->
-            <div class="card-component" onclick="routeToDesk('Virtual Number Solutions')">
-                <div class="card-icon-container"><i class="fas fa-phone-alt"></i></div>
-                <h3>Virtual Number Solutions</h3>
-                <div class="price-display-box">
-                    <div class="price-main">₦3,000</div>
-                    <div class="price-sub">textPlus & OTP Verification</div>
-                </div>
-                <button class="card-action-trigger">Buy Now <i class="fas fa-chevron-right"></i></button>
-            </div>
-
-            <!-- Module 10 -->
-            <div class="card-component" onclick="routeToDesk('General Customer Support Desk')">
-                <div class="card-icon-container"><i class="fas fa-headset"></i></div>
-                <h3>Customer Support</h3>
-                <div class="price-display-box">
-                    <div class="price-main">24/7 Active</div>
-                    <div class="price-sub">Free Help & General Queries</div>
-                </div>
-                <button class="card-action-trigger">Get Support <i class="fas fa-chevron-right"></i></button>
-            </div>
-
-        </div>
+    <div class="product-card">
+        <div class="product-title">HMA VPN</div>
+        <div class="product-desc">Premium multi-device platform compatibility.</div>
+        <div class="price-badge">₦3,000.00</div>
+        <a href="#" class="buy-btn">Buy Now</a>
     </div>
 
-    <div class="marketing-metrics-container">
-        <!-- Brand Perks -->
-        <div class="panel-container">
-            <div class="panel-headline"><i class="fas fa-shield-alt"></i> Why Choose Affordlogs?</div>
-            <ul class="value-list-items">
-                <li><i class="fas fa-check-circle"></i> Fast Delivery</li>
-                <li><i class="fas fa-check-circle"></i> Trusted Service</li>
-                <li><i class="fas fa-check-circle"></i> Affordable Pricing</li>
-                <li><i class="fas fa-check-circle"></i> Secure Transactions</li>
-                <li><i class="fas fa-check-circle"></i> Worldwide Support</li>
-                <li><i class="fas fa-check-circle"></i> Quick Response Time</li>
-            </ul>
-        </div>
-
-        <!-- Secure Handle Hub (Phone Number Fully Blocked & Excluded) -->
-        <div class="panel-container" style="display: flex; flex-direction: column; justify-content: space-between; gap: 20px;">
-            <div>
-                <div class="panel-headline"><i class="fas fa-user-check"></i> Contact Us</div>
-                <p style="font-size: 14px; color: #94a3b8; line-height: 1.5;">Connect directly with our verification operators for secure token deliveries and rate checks:</p>
-            </div>
-            <a href="https://t.me/afford_logs" target="_blank" class="secure-communication-button">
-                <i class="fab fa-telegram-plane"></i>
-                <div>
-                    <div class="communication-label">Official Telegram Desk</div>
-                    <div class="communication-handle">@afford_logs</div>
-                </div>
-            </a>
-        </div>
+    <div class="product-card">
+        <div class="product-title">Express VPN PC Login</div>
+        <div class="product-desc">Optimized allocation dedicated for desktop operating systems.</div>
+        <div class="price-badge">₦3,500.00</div>
+        <a href="#" class="buy-btn">Buy Now</a>
     </div>
 
-    <!-- Disclaimers & Compliance Framework -->
-    <div class="compliance-wrapper">
-        <div class="compliance-box-inner">
-            <div class="compliance-heading"><i class="fas fa-gavel"></i> Terms & Disclaimer</div>
-            <p>All services are intended for lawful use only. Customers are responsible for how purchased services are used. Once a service is delivered and confirmed working, responsibility transfers to the buyer.</p>
-            
-            <div class="affiliation-heading"><i class="fas fa-ban"></i> We Are Not Affiliated With</div>
-            <p>WhatsApp, Telegram, Meta, Google, X (Twitter) or any third-party platform. We are an independent digital services provider.</p>
-        </div>
+    <div class="product-card">
+        <div class="product-title">Express VPN Phone Login</div>
+        <div class="product-desc">Mobile application platform setup availability.</div>
+        <div class="price-badge">₦3,000.00</div>
+        <a href="#" class="buy-btn">Buy Now</a>
     </div>
 
-    <div class="bottom-brand-statement">
-        Affordlogs – Digital Access Made Easy
+    <div class="product-card">
+        <div class="product-title">1 Month Proton VPN</div>
+        <div class="product-desc">Premium access tier configuration for 30 days.</div>
+        <div class="price-badge">₦3,000.00</div>
+        <a href="#" class="buy-btn">Buy Now</a>
     </div>
 
-    <!-- Automated Order Link Construction Script -->
-    <script>
-        const PRIMARY_HANDLE = "afford_logs";
+    <div class="product-card">
+        <div class="product-title">Nord VPN 1 Month</div>
+        <div class="product-desc">Standard individual plan authorization package.</div>
+        <div class="price-badge">₦3,000.00</div>
+        <a href="#" class="buy-btn">Buy Now</a>
+    </div>
 
-        function routeToDesk(selectedService) {
-            let detailSuffix = "";
-            
-            // Appends custom parameters to pre-filled message depending on selection
-            if (selectedService === 'Social Media Services') {
-                detailSuffix = " (Inquiring about Facebook Random [₦2,500], USA Created Profiles [₦5,500], or Higher Tiers)";
-            } else if (selectedService === 'Virtual Number Solutions') {
-                detailSuffix = " (Inquiring about textPlus / OTP setup [Fixed ₦3,000])";
-            } else {
-                detailSuffix = " to check current live rate/value details";
-            }
+    <!-- Communication & Social Section -->
+    <div class="category-title">📱 Communication & Social Profiles</div>
 
-            const formattedMessage = `Hello Affordlogs, I am visiting your official website dashboard. I would like to lock in an order for: ${selectedService}${detailSuffix}.`;
-            const secureUrl = `https://t.me/${PRIMARY_HANDLE}?text=${encodeURIComponent(formattedMessage)}`;
-            window.open(secureUrl, '_blank');
-        }
-    </script>
+    <div class="product-card">
+        <div class="product-title">textPlus Google Login</div>
+        <div class="product-desc">Standard platform configuration parameters.</div>
+        <div class="price-badge">₦3,000.00</div>
+        <a href="#" class="buy-btn">Buy Now</a>
+    </div>
+
+    <div class="product-card">
+        <div class="product-title">New Google Voice</div>
+        <div class="product-desc">Fresh profile setup alignment configuration.</div>
+        <div class="price-badge">₦5,000.00</div>
+        <a href="#" class="buy-btn">Buy Now</a>
+    </div>
+
+    <div class="category-title">🎵 TikTok Accounts</div>
+
+    <div class="product-card">
+        <div class="product-title">TikTok 600+ Follower</div>
+        <div class="product-desc">Profile configuration with minimum established metric tier.</div>
+        <div class="price-badge">₦6,000.00</div>
+        <a href="#" class="buy-btn">Buy Now</a>
+    </div>
+
+    <div class="product-card">
+        <div class="product-title">TikTok 200+ Follower</div>
+        <div class="product-desc">Baseline established profile statistics configuration.</div>
+        <div class="price-badge">₦4,000.00</div>
+        <a href="#" class="buy-btn">Buy Now</a>
+    </div>
+
+    <div class="category-title">📸 USA Social Media Profiles</div>
+
+    <div class="product-card">
+        <div class="product-title">USA Instagram 0-10 Follower</div>
+        <div class="product-desc">Region-specific base account platform parameters.</div>
+        <div class="price-badge">₦2,000.00</div>
+        <a href="#" class="buy-btn">Buy Now</a>
+    </div>
+
+    <div class="product-card">
+        <div class="product-title">USA Twitter 0-10 Follower</div>
+        <div class="product-desc">Standard regional network profile validation criteria.</div>
+        <div class="price-badge">₦2,000.00</div>
+        <a href="#" class="buy-btn">Buy Now</a>
+    </div>
+
+    <div class="product-card">
+        <div class="product-title">USA Facebook Beautiful Profile</div>
+        <div class="product-desc">Enhanced identity presentation criteria template.</div>
+        <div class="price-badge">₦3,000.00</div>
+        <a href="#" class="buy-btn">Buy Now</a>
+    </div>
+
+    <div class="product-card">
+        <div class="product-title">Facebook Random Account</div>
+        <div class="product-desc">Standard entry tier platform profile distribution.</div>
+        <div class="price-badge">₦2,500.00</div>
+        <a href="#" class="buy-btn">Buy Now</a>
+    </div>
+
+</div>
+
 </body>
 </html>
